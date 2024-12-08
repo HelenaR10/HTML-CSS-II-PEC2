@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <include src="./views/nav.html"></include>
+    </header>
+
+    <main class="main-container">
+        <h1 class="main-container__title">¿Quieres apuntarte?</h1>
+        <div class="p-0 contact-container container card">
+            <div class="card-header">
+                <h3 class="contact-title text-center">Contáctanos</h3>
+            </div>
+            <form class="card-body pb-4" name="contact" netlify>
+                <div class="mb-3 form-item">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Escribe tu nombre" required>
+                </div>
+                <div class="mb-3 form-item">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@example.com" required>
+                </div>
+                <div class="mb-3 form-item">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+                </div>  
+                <button type="submit" class="btn btn-dark">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <include src="./views/scripts.html"></include>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./assets/scripts/handle-particles.js"></script>
+
+    <include src="./views/footer.html"></include>
+</body>
+</html>

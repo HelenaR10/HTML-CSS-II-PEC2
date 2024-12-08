@@ -1,0 +1,27 @@
+@use "sass:color";
+
+$title-font: "Exo 2";
+$secondary-color: oklch(65% 0.20 220 / 0.64);
+$particles-color: hsl(205, 60%, 55%);
+$bs-box-shadow: 7px 12px 69px -26px rgba(0,0,0,0.75);
+
+
+/*MIXINS*/
+@mixin colocation-areas($grid-area: a, $width: 100%) {
+    grid-area: $grid-area;
+    width: $width;
+}
+@mixin padding-margin-zero() {
+    padding: 0;
+    margin: 0;
+}
+@mixin flex-container($flex-direction: column, $align-items: center, $text-align: center) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    text-align: $text-align;
+}
+@mixin grid-container($grid-columns: repeat(2, 1fr)) {
+    display: grid;
+    grid-template-columns: $grid-columns;
+}

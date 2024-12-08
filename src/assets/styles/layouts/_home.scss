@@ -1,0 +1,100 @@
+main {
+  width: inherit;
+  @include padding-margin-zero();
+}
+main .home-container {
+  min-width: 100%;
+  height: 570px;
+  @include padding-margin-zero();
+  overflow: hidden;
+  align-items: center;
+  justify-items: center;
+  background-color: $white;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    height: 100vh;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.home-container {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+      'b c d'
+      'a a a'
+      'a a a';
+  }
+  @supports not (display: grid) {
+    display: block;
+  }
+}
+:is(.container-item__a, .container-item__b, .container-item__c, .container-item__d) {
+  @supports (object-fit: cover) {
+    object-fit: cover;
+    filter: brightness(80%);
+  }
+
+  @supports not (object-fit: cover) {
+    background-size: cover;
+    background-position: center;
+  }
+}
+.container-item__a {
+  @include colocation-areas(a, 50%);
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    @include colocation-areas(a, 100%);
+  }
+}
+.container-item__b { 
+  @include colocation-areas(b, 70%); 
+
+  @media (max-width: 1024px) {
+    @include colocation-areas(b, 100%);
+  }
+}
+.container-item__c { 
+  @include colocation-areas(c, 50%); 
+
+  @media (max-width: 1024px) {
+    @include colocation-areas(c, 100%);
+  }
+}
+.container-item__d { 
+  @include colocation-areas(d, 40%); 
+
+  @media (max-width: 1024px) {
+    @include colocation-areas(d, 90%);
+  }
+}
+.container-item__text {
+  position: absolute;
+  width: 30%;
+  bottom: 130px;
+  left: 25px;
+  font-family: $title-font;
+  font-size: 45px;
+  color: $gray-900;
+  padding: 0;
+
+  @media (max-width: 1024) {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    top: 40%;
+  }
+}
+.footer__container {
+  @include grid-container();
+}
+@media (max-width: 1024) {
+    .footer-nav {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      padding: 0 20px;
+    }
+}
