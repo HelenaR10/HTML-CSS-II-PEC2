@@ -3,8 +3,8 @@
     padding: 30px;
 }
 .main-container__title {
-    border: 0;
     padding: 40px;
+    border: 0;
 }
 .contact-container:has(div) {
     width: 60%;
@@ -17,8 +17,8 @@
     }
 }
 .contact-title {
-    text-align: center;
     font-family: $title-font;
+    text-align: center;
 }
 @media (min-width: 599px) and (max-width: 1024px) {
     .form-item {

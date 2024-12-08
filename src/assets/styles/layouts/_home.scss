@@ -2,32 +2,33 @@ main {
   width: inherit;
   @include padding-margin-zero();
 }
+.home-container {
+  @supports (display: grid) {
+    display: grid;
+    grid-template-areas: 
+    'b c d'
+    'a a a'
+    'a a a';
+  }
+  grid-template-rows: repeat(3, 1fr);
+
+  @supports not (display: grid) {
+    display: block;
+  }
+}
 main .home-container {
+  position: relative;
+  align-items: center;
+  justify-items: center;
   min-width: 100%;
   height: 570px;
   @include padding-margin-zero();
   overflow: hidden;
-  align-items: center;
-  justify-items: center;
   background-color: $white;
-  position: relative;
 
   @media (max-width: 1024px) {
-    height: 100vh;
     grid-template-rows: repeat(2, 1fr);
-  }
-}
-.home-container {
-  @supports (display: grid) {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-      'b c d'
-      'a a a'
-      'a a a';
-  }
-  @supports not (display: grid) {
-    display: block;
+    height: 100vh;
   }
 }
 :is(.container-item__a, .container-item__b, .container-item__c, .container-item__d) {
@@ -37,8 +38,8 @@ main .home-container {
   }
 
   @supports not (object-fit: cover) {
-    background-size: cover;
     background-position: center;
+    background-size: cover;
   }
 }
 .container-item__a {
@@ -72,19 +73,19 @@ main .home-container {
 }
 .container-item__text {
   position: absolute;
-  width: 30%;
   bottom: 130px;
   left: 25px;
+  width: 30%;
+  padding: 0;
   font-family: $title-font;
   font-size: 45px;
   color: $gray-900;
-  padding: 0;
 
   @media (max-width: 1024) {
-    width: 100%;
+    top: 40%;
     bottom: 0;
     left: 0;
-    top: 40%;
+    width: 100%;
   }
 }
 .footer__container {

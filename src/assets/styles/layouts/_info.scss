@@ -1,7 +1,6 @@
 :where(main, .info-container, .info-container__img) {
     width: 100%;
 }
-
 :is(.info-container__text, .article-container, .article-information, .article-information-img, .final-article) {
     width: 80%;
 
@@ -9,24 +8,20 @@
         width: 100%;
     }
 }
-
 h3 {
     font-family: $title-font;
 }
-
 .info-container {
     @include flex-container();
     height: 570px;
     container-type: inline-size;
 }
-
 .info-container__img {
     width: 100%;
     height: 100%;
     overflow: hidden;
     object-fit: cover;
 }
-
 .info-container__text {
     @include grid-container();
     gap: 30px;
@@ -38,37 +33,34 @@ h3 {
         padding: 20px;
     }
 }
-
 .info-container__text__blockquote {
-    text-align: start;
     font-size: 12px;
+    text-align: start;
 
     @container (max-width: 1024px) {
         font-size: 8px;
     }
 }
-
 blockquote {
+    margin: 5px 10px;
     font-size: 20px;
     font-style: italic;
-    margin: 5px 10px;
 
     @container (max-width: 1024px) {
         font-size: 15px;
     }
 }
-
 .list-container {
     @include flex-container();
     padding: 30px;
 
     li {
-        font-size: 20px;
-        list-style: none;
         display: flex;
         gap: 10px;
         align-items: baseline;
+        font-size: 20px;
         text-align: start;
+        list-style: none;
 
         i {
             color: $secondary-color;
@@ -89,13 +81,11 @@ blockquote {
         padding: 20px 20px 0;
     }
 }
-
 .article-container {
     @include flex-container();
     margin: 0 auto;
     container-type: inline-size;
 }
-
 .article-container__main {
     @include flex-container();
     padding: 20px;
@@ -110,7 +100,6 @@ blockquote {
         }
     }
 }
-
 .article-container__main__text {
     @include grid-container();
     gap: 30px;
@@ -120,7 +109,6 @@ blockquote {
         grid-template-columns: none;
     }
 }
-
 .article-information {
     @include flex-container();
     padding: 20px;
@@ -129,12 +117,11 @@ blockquote {
         padding: 10px;
     }
 }
-
 .article-information-img {
     @include grid-container();
     align-items: center;
-    text-align: start;
     padding: 0 30px 40px 30px;
+    text-align: start;
 
     img {
         width: 90%;
@@ -147,12 +134,11 @@ blockquote {
 
     @container (max-width: 600px) {
         grid-template-columns: none;
-        text-align: center;
         gap: 20px;
         padding: 0 30px 20px 30px;
+        text-align: center;
     }
 }
-
 .final-article {
     padding-bottom: 40px;
 
